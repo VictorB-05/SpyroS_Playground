@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas: 
+        "logo titulo espacio";
+    background-color: blueviolet;
+}
+#logo{
+    grid-template: "logo";
+    align-self: start;
+}
+header h1{
+    align-self: center;
+    text-align: center;
+    grid-template: "titulo";
+    color: aliceblue;
+    font-size: 3em;
+}
+.espacio{
+    grid-template: "espacio";
+}
