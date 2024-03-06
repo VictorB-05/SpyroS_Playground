@@ -3,6 +3,15 @@
     padding: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+#container{
+    /* Esta linea fija una altura mínima para la página, 
+       Ha sido implementada para posicionar el footer siempre a pie de página. */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* color provisional */
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(11,1,57,1) 38%, rgba(53,4,87,1) 100%);
+}
 header{
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -12,7 +21,11 @@ header{
 }
 #logo{
     grid-template: "logo";
+    padding: 0 100px;
     align-self: start;
+}
+#logoFooter{
+    height: 150px;
 }
 header h1{
     align-self: center;
@@ -23,4 +36,21 @@ header h1{
 }
 .espacio{
     grid-template: "espacio";
+}
+footer{
+    padding: 2% 10%;
+    display: flex;
+    margin-top:auto;    /* posiciona el footer a pie de pagina, esto DEPENDE de la propiedad FLEX establecida en el CONTAINER. */
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(11,1,57,1) 38%, rgba(53,4,87,1) 100%);
+    color: white;
+}
+#descripcion{
+    margin: 20px;
+}
+.banderas{
+    width: 30px;
+}
+#navFooter{
 }
