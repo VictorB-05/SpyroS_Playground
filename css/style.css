@@ -17,12 +17,46 @@ header{
     grid-template-columns: repeat(3,1fr);
     grid-template-areas: 
         "logo titulo espacio";
-    background-color: blueviolet;
+        background: linear-gradient(180deg, rgba(11,1,57,1) 0%, rgba(53,4,87,0.5) 100%);
+}
+main{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color:white;
+    margin-top:3%;
+}
+#juegoRandom{
+    margin:20px;
+    background-color: violet;
+    padding: 20px;
+    border-radius: 5em;
+}
+.juegos{
+    display:flex;
+    margin:20px 20px;
+    align-items: center;
+    justify-content: center;
+    flex:1 1 35vw;
+    color:white;
+    height: 200px;
+    border:solid 2px violet;
+    border-radius: 5em;
+}
+#containerJuegos{
+    display:flex;
+    flex-basis: 100%;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
 }
 #logo{
     grid-template: "logo";
-    padding: 0 100px;
+    padding: 20px 20%;
     align-self: start;
+    width: 150px;
 }
 #logoFooter{
     height: 150px;
