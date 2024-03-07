@@ -4,7 +4,7 @@ var game = function(){
     let move = 20;
     let moveJ = 20;
     let width = document.documentElement.clientWidth - move;
-    let height = document.documentElement.clientHeight - move;
+    let height = document.documentElement.clientHeight;
     let control;
     let player1;
     let player2;
@@ -24,7 +24,8 @@ var game = function(){
         player1.keyCode = null;
         player2.keyPress = false;
         player2.keyCode = null;
-
+        jugador1.style.top = (height-160)/2+"px";
+        jugador2.style.top = (height-160)/2+"px";
     }
 
     function stop(){
@@ -39,14 +40,27 @@ var game = function(){
     function moverJ(){
         if (player1.keyPress){
             if (player1.keyCode == 87){
-                jugador1.style.top = (jugador1.offsetTop - moveJ) + "px";
+                if(parseInt(jugador1.style.top)>moveJ){
+                    jugador1.style.top = (jugador1.offsetTop - moveJ) + "px";
+                }
             }
             if (player1.keyCode == 83){
-                jugador1.style.top = (jugador1.offsetTop + moveJ) + "px";
+                if(parseInt(jugador1.style.top)+moveJ<(height-160)){
+                    jugador1.style.top = (jugador1.offsetTop + moveJ) + "px";               
+                }
             }
         }
         if (player2.keyPress){
-
+            if (player2.keyCode == 38){
+                if(parseInt(jugador2.style.top)>moveJ){
+                    jugador2.style.top = (jugador2.offsetTop - moveJ) + "px";
+                }
+            }
+            if (player2.keyCode == 40){
+                if(parseInt(jugador2.style.top)+moveJ<(height-160)){
+                    jugador2.style.top = (jugador2.offsetTop + moveJ) + "px";
+                }
+            }
         } 
     }
 
@@ -76,7 +90,7 @@ var game = function(){
         if(e.keyCode == 40 || e.keyCode == 38){
             player2.keyPress = false;
         }
-        if(e.keyCode == 40 || e.keyCode == 38){
+        if(e.keyCode == 87 || e.keyCode == 83){
             player1.keyPress = false;
         }
     }
