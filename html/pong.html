@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spyro's Pong</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pong.css">
 </head>
 <body>
     <div  id="container">
@@ -14,7 +15,10 @@
             <div class="espacio"></div>
         </header>
         <main>
-
+            <div id="jugador1" class="j" onkeypress="myFunction()"></div>
+            <div id="bola"></div>
+            <div id="jugador2" class="j"></div>
+            <p id="log"></p>
         </main>
         <footer>
             <img id="logoFooter" src="../recursos/Logorec.gif" alt="El logo de Spyro's Playground">

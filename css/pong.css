@@ -1,0 +1,45 @@
+div#jugador1{
+    background-color: blue ;
+    float: left;
+}
+div#jugador2{
+    background-color: red ;
+    right: 0px;
+}
+.j{
+    width: 2em;
+    height: 10em;
+    border: 0.2em solid white;
+    position: absolute;
+}
+div#bola{
+    background-color: green;
+    width: 4em;
+    height: 4em;
+    border: 0.2em solid white;
+    border-radius: 10em;
+    position: absolute;
+}
+
+.jabajo{
+    translate: 0,20em;
+}
+
+
+.jariba{
+    translate: 0,-20em;
+}
+
+body{
+    height: 100%;
+    background-color: black;
+}
+
+div#barra{
+    width:50vw;
+    border-right: #fff dashed 5px;
+    height: 100vh;
+}
+*{
+    margin: 0;
+}
