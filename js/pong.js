@@ -1,8 +1,8 @@
 
 var game = function(){
-    let time = 100;
-    let move = 20;
-    let moveJ = 20;
+    let time = 12;
+    let move = 5;
+    let moveJ = 5;
     let width = document.documentElement.clientWidth - move;
     let height = document.documentElement.clientHeight - document.documentElement.clientHeight*0.12;
     let control;
@@ -64,7 +64,7 @@ var game = function(){
 
     function verEstadoB(){
         if(ChocaJ2B()){
-            if(bola.direction ===1){
+            if(bola.state ===1){
                 bola.state=3;
             }else{
                 bola.state=4;
@@ -72,31 +72,47 @@ var game = function(){
         }
 
         if(ChocaJ1B()){
-            if(bola.direction ===3){
+            if(bola.state ===3){
                 bola.state=1;
             }else{
                 bola.state=2;
             }
         }
 
-        if(bola.direction ===1){
+        if(bola.state == 1){
             if(bola.offsetTop >= height) bola.state=2;
-            else if(bola.offsetTop <= 0) bola.state=1;
         }else{
-            if(bola.offsetTop >= height) bola.state=4;
-            else if(bola.offsetTop <= 0) bola.state=3;
+            if(bola.state == 2){
+                if(bola.offsetTop <= 0) bola.state=1;
+            }
+            else{
+                if(bola.state == 3){
+                    if(bola.offsetTop >= height) bola.state=4;
+                }
+                else{
+                    if(bola.offsetTop <= 0) bola.state=3;
+                }
             }
         }
     }
 
-    function ChocaJ2B(){
 
+    function ChocaJ2B(){
+        let choca = false;
+        if((bola.offsetLeft >= width-jugador2.clientWidth) && (bola.offsetTop >= jugador2.offsetTop)
+         && (bola.offsetTop <= (jugador2.offsetTop + jugador2.clientHeight))   ){
+            return true;
+        }
         return false;
     }
 
     function ChocaJ1B(){
-        
-        return false;
+        let choca = false;
+        if((bola.offsetLeft <= jugador1.clientWidth) && (bola.offsetTop >= jugador1.offsetTop)
+         && (bola.offsetTop <= (jugador1.offsetTop + jugador1.clientHeight))   ){
+            choca = true;
+        }
+        return choca;
     }
 
     function moverJ(){
