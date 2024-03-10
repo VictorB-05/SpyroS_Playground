@@ -21,25 +21,17 @@ div#bola{
     position: absolute;
 }
 
-.jabajo{
-    translate: 0,20em;
-}
-
-
-.jariba{
-    translate: 0,-20em;
-}
-
 body{
     height: 100%;
     background-color: black;
 }
 
 div#barra{
-    width:50vw;
-    border-right: #fff dashed 5px;
+    width:49vw;
+    border-right: #fff dashed 1vw;
     height: 100vh;
 }
 *{
     margin: 0;
+    scrollbar-width: hide;
 }

@@ -1,10 +1,10 @@
 
 var game = function(){
-    let time = 30;
+    let time = 100;
     let move = 20;
     let moveJ = 20;
     let width = document.documentElement.clientWidth - move;
-    let height = document.documentElement.clientHeight;
+    let height = document.documentElement.clientHeight - document.documentElement.clientHeight*0.12;
     let control;
     let player1;
     let player2;
@@ -26,6 +26,8 @@ var game = function(){
         player2.keyCode = null;
         jugador1.style.top = (height-160)/2+"px";
         jugador2.style.top = (height-160)/2+"px";
+        bola.style.top = (height-64)/2+"px";
+        bola.style.left = (width-64)/2+"px";
     }
 
     function stop(){
@@ -34,7 +36,67 @@ var game = function(){
     }
 
     function play(){
+        moverB();
         moverJ();
+    }
+
+    function moverB(){
+        verEstadoB();
+        switch(bola.state){
+            case 1://derecha abajo
+                bola.style.left = (bola.offsetLeft + move) + "px";
+                bola.style.top = (bola.offsetTop + move) + "px";
+            break;
+            case 2://derecha arriba
+                bola.style.left = (bola.offsetLeft + move) + "px";
+                bola.style.top = (bola.offsetTop - move) + "px";
+            break;
+            case 3://izquierda abajo
+                bola.style.left = (bola.offsetLeft - move) + "px";
+                bola.style.top = (bola.offsetTop + move) + "px";
+            break;
+            case 4://izquierda arriba
+                bola.style.left = (bola.offsetLeft - move) + "px";
+                bola.style.top = (bola.offsetTop - move) + "px";
+            break;
+        }
+    }
+
+    function verEstadoB(){
+        if(ChocaJ2B()){
+            if(bola.direction ===1){
+                bola.state=3;
+            }else{
+                bola.state=4;
+            }
+        }
+
+        if(ChocaJ1B()){
+            if(bola.direction ===3){
+                bola.state=1;
+            }else{
+                bola.state=2;
+            }
+        }
+
+        if(bola.direction ===1){
+            if(bola.offsetTop >= height) bola.state=2;
+            else if(bola.offsetTop <= 0) bola.state=1;
+        }else{
+            if(bola.offsetTop >= height) bola.state=4;
+            else if(bola.offsetTop <= 0) bola.state=3;
+            }
+        }
+    }
+
+    function ChocaJ2B(){
+
+        return false;
+    }
+
+    function ChocaJ1B(){
+        
+        return false;
     }
 
     function moverJ(){
