@@ -1,0 +1,49 @@
+div#jugador1{
+    background-color: blue ;
+    float: left;
+}
+div#jugador2{
+    background-color: red ;
+    right: 0px;
+}
+.j{
+    width: 2em;
+    height: 10em;
+    border: 0.2em solid white;
+    position: relative;
+}
+div#bola{
+    background-color: green;
+    width: 4em;
+    height: 4em;
+    border: 0.2em solid white;
+    border-radius: 10em;
+    position: relative;
+}
+
+body{
+    height: 100%;
+    background-color: black;
+}
+
+div#barra{
+    width:49%;
+    border-right: #fff dashed 1%;
+    height: 100%;
+    position: relative;
+}
+*{
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.punto{
+    color: #fff;
+}
+#juego{
+    width: 10em;
+    height: 20em;
+}
+main{
+    height: 100%; 
+}
