@@ -3,14 +3,34 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100vh;
     margin: 0;
 }
 
+h2 {
+    margin-bottom: 20px;
+}
+
+.welcome-text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Cambiar la fuente */
+    color: #000000; /* Cambiar el color del texto */
+    margin-right: 20px; /* Espacio entre el texto y los botones */
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #memory-game {
-    width: 500px;
+    width: 720px; /* Ancho total del contenedor de las celdas */
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 #background-image {
@@ -19,17 +39,21 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+<<<<<<< Updated upstream
     background-image: url('../recursos/mente\(memory\).png');
+=======
+    background-image: url('IMG/mente2.png');
+>>>>>>> Stashed changes
     background-size: cover;
     background-position: center;
-    z-index: -1; /* Para asegurarse de que la imagen de fondo esté detrás de otros elementos */
+    z-index: -1;
 }
 
 .memory-card {
-    width: 100px;
-    height: 100px;
+    width: 80px; /* Ajustar el tamaño de las celdas */
+    height: 80px; /* Ajustar el tamaño de las celdas */
     background-color: #ccc;
-    margin: 5px;
+    margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,6 +62,8 @@ body {
     transition: transform 0.3s ease;
     transform-style: preserve-3d;
     position: relative;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .memory-card.flip {
@@ -53,9 +79,34 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 24px;
-    background-color: #ccc;
+    background-color: #a60dff;
+    border-radius: 50%;
 }
 
 .front-face {
     transform: rotateY(180deg);
+}
+
+#button-container {
+    display: flex;
+}
+
+#start-game, #restart-game {
+    padding: 15px 25px;
+    font-size: 18px;
+    background-color: #570570;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#start-game:hover, #restart-game:hover {
+    background-color: #ccfa00;
 }
