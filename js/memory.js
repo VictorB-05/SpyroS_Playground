@@ -1,66 +1,66 @@
-const cards = ['fa-dog', 'fa-dog', 'fa-cat', 'fa-cat', 'fa-car', 'fa-car', 'fa-bicycle', 'fa-bicycle', 'fa-tree', 'fa-tree', 'fa-umbrella', 'fa-umbrella', 'fa-coffee', 'fa-coffee', 'fa-leaf', 'fa-leaf'];
-let flippedCard = null;
-let canFlip = false;
+const cartas = ['fa-dog', 'fa-dog', 'fa-cat', 'fa-cat', 'fa-car', 'fa-car', 'fa-bicycle', 'fa-bicycle', 'fa-tree', 'fa-tree', 'fa-umbrella', 'fa-umbrella', 'fa-coffee', 'fa-coffee', 'fa-leaf', 'fa-leaf'];
+let cartaVolteada = null;
+let puedeVoltear = false;
 
-function shuffle(array) {
+function mezclar(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
 
-function createGameBoard() {
-    const gameBoard = document.getElementById('memory-game');
-    gameBoard.innerHTML = ''; // Limpiar el tablero antes de crear nuevos cuadrados
-    shuffle(cards);
+function crearTablero() {
+    const tablero = document.getElementById('memory-game');
+    tablero.innerHTML = ''; // Limpiar el tablero antes de crear nuevas cartas
+    mezclar(cartas);
 
-    cards.forEach((card, index) => {
-        const cardElement = document.createElement('div');
-        cardElement.classList.add('memory-card');
+    cartas.forEach((carta, index) => {
+        const elementoCarta = document.createElement('div');
+        elementoCarta.classList.add('memory-card');
 
-        const frontFace = document.createElement('div');
-        frontFace.classList.add('card-face', 'front-face', 'fas', card);
+        const caraFrontal = document.createElement('div');
+        caraFrontal.classList.add('card-face', 'front-face', 'fas', carta);
 
-        const backFace = document.createElement('div');
-        backFace.classList.add('card-face');
+        const caraPosterior = document.createElement('div');
+        caraPosterior.classList.add('card-face');
 
-        cardElement.appendChild(frontFace);
-        cardElement.appendChild(backFace);
+        elementoCarta.appendChild(caraFrontal);
+        elementoCarta.appendChild(caraPosterior);
 
-        cardElement.addEventListener('click', flipCard);
-        gameBoard.appendChild(cardElement);
+        elementoCarta.addEventListener('click', voltearCarta);
+        tablero.appendChild(elementoCarta);
     });
 
-    canFlip = true;
+    puedeVoltear = true;
 }
 
-function flipCard() {
-    if (!canFlip || this === flippedCard || this.classList.contains('flip')) return;
+function voltearCarta() {
+    if (!puedeVoltear || this === cartaVolteada || this.classList.contains('flip')) return;
 
     this.classList.add('flip');
 
-    if (!flippedCard) {
-        flippedCard = this;
+    if (!cartaVolteada) {
+        cartaVolteada = this;
     } else {
-        if (flippedCard.querySelector('.front-face').classList.value !== this.querySelector('.front-face').classList.value) {
-            canFlip = false;
+        if (cartaVolteada.querySelector('.front-face').classList.value !== this.querySelector('.front-face').classList.value) {
+            puedeVoltear = false;
             setTimeout(() => {
-                flippedCard.classList.remove('flip');
+                cartaVolteada.classList.remove('flip');
                 this.classList.remove('flip');
-                flippedCard = null;
-                canFlip = true;
+                cartaVolteada = null;
+                puedeVoltear = true;
             }, 1000);
         } else {
-            flippedCard = null;
+            cartaVolteada = null;
         }
     }
 }
 
-function restartGame() {
-    const gameBoard = document.getElementById('memory-game');
-    gameBoard.innerHTML = ''; // Limpiar el tablero
-    createGameBoard(); // Volver a crear el tablero
+function reiniciarJuego() {
+    const tablero = document.getElementById('memory-game');
+    tablero.innerHTML = ''; // Limpiar el tablero
+    crearTablero(); // Volver a crear el tablero
 }
 
-document.getElementById('start-game').addEventListener('click', createGameBoard);
-document.getElementById('restart-game').addEventListener('click', restartGame);
+document.getElementById('start-game').addEventListener('click', crearTablero);
+document.getElementById('restart-game').addEventListener('click', reiniciarJuego);
