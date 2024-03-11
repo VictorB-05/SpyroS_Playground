@@ -109,11 +109,11 @@ var game = function(){
             }
         }
         if(bola.offsetLeft<=0){
-            scoreP1++;
+            scoreP2++;
             init();
         }
         if(bola.offsetLeft>=width){
-            scoreP2++;
+            scoreP1++;
             init();
         }
     }
