@@ -10,7 +10,7 @@ div#jugador2{
     width: 2em;
     height: 10em;
     border: 0.2em solid white;
-    position: absolute;
+    position: relative;
 }
 div#bola{
     background-color: green;
@@ -18,7 +18,7 @@ div#bola{
     height: 4em;
     border: 0.2em solid white;
     border-radius: 10em;
-    position: absolute;
+    position: relative;
 }
 
 body{
@@ -27,10 +27,10 @@ body{
 }
 
 div#barra{
-    width:49vw;
-    border-right: #fff dashed 1vw;
-    height: 100vh;
-    position: absolute;
+    width:49%;
+    border-right: #fff dashed 1%;
+    height: 100%;
+    position: relative;
 }
 *{
     margin: 0;
@@ -39,4 +39,11 @@ div#barra{
 }
 .punto{
     color: #fff;
+}
+#juego{
+    width: 10em;
+    height: 20em;
+}
+main{
+    height: 100%; 
 }

@@ -4,8 +4,8 @@ var game = function(){
     let move = 5;
     let moveJ = 5;
     let pelota = bola.clientWidth;
-    let width = document.documentElement.clientWidth - move*10;
-    let height = document.documentElement.clientHeight - pelota;
+    let width = juego.clientWidth - move*10;
+    let height = juego.clientHeight - pelota;
     let control;
     let player1;
     let player2;
