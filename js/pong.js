@@ -19,6 +19,12 @@ var game = function(){
 
     function init(){
         if(scoreP1 ==  7 || scoreP2==7){
+            if(scoreP1>scoreP2){
+                alert("Jugador1 gana");
+            }
+            else{
+                alert("Jugador2 gana");
+            }
             stop();
         }else{
             document.getElementById("p1").innerHTML = scoreP1;
