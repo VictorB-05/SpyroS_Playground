@@ -21,6 +21,7 @@ var game = function(){
         if(scoreP1 ==  7 || scoreP2==7){
             stop();
         }else{
+            move = 5;
             document.getElementById("p1").innerHTML = scoreP1;
             document.getElementById("p2").innerHTML = scoreP2;
             bola.style.left = 0;
@@ -77,6 +78,7 @@ var game = function(){
             }else{
                 bola.state=4;
             }
+            move++;
         }
 
         if(ChocaJ1B()){
@@ -85,6 +87,8 @@ var game = function(){
             }else{
                 bola.state=2;
             }
+            move++;
+
         }
 
         if(bola.state == 1){
