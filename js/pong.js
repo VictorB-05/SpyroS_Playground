@@ -20,13 +20,14 @@ var game = function(){
     function init(){
         if(scoreP1 ==  7 || scoreP2==7){
             stop();
+            alert("Ganaste!");
         }else{
             move = 5;
             document.getElementById("p1").innerHTML = scoreP1;
             document.getElementById("p2").innerHTML = scoreP2;
             bola.style.left = 0;
             bola.state = 1;
-            bola.direction = 1; //right 1, left 2
+            bola.direction = 1; 
             player1 = new Object();
             player2 = new Object();
             player1.keyPress = false;
