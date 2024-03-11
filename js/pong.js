@@ -3,36 +3,44 @@ var game = function(){
     let time = 12;
     let move = 5;
     let moveJ = 5;
-    let width = document.documentElement.clientWidth - move;
-    let height = document.documentElement.clientHeight - document.documentElement.clientHeight*0.12;
+    let pelota = bola.clientWidth;
+    let width = document.documentElement.clientWidth - move*10;
+    let height = document.documentElement.clientHeight - pelota;
     let control;
     let player1;
     let player2;
+    let scoreP1=0;
+    let scoreP2=0;
 
     function start(){
         init();
-        control = setInterval(play,time)
+        control = setInterval(play,time);
     }
 
     function init(){
-        bola.style.left = 0;
-        bola.state = 1;
-        bola.direction = 1; //right 1, left 2
-        player1 = new Object();
-        player2 = new Object();
-        player1.keyPress = false;
-        player1.keyCode = null;
-        player2.keyPress = false;
-        player2.keyCode = null;
-        jugador1.style.top = (height-160)/2+"px";
-        jugador2.style.top = (height-160)/2+"px";
-        bola.style.top = (height-64)/2+"px";
-        bola.style.left = (width-64)/2+"px";
+        if(scoreP1 ==  7 || scoreP2==7){
+            stop();
+        }else{
+            document.getElementById("p1").innerHTML = scoreP1;
+            document.getElementById("p2").innerHTML = scoreP2;
+            bola.style.left = 0;
+            bola.state = 1;
+            bola.direction = 1; //right 1, left 2
+            player1 = new Object();
+            player2 = new Object();
+            player1.keyPress = false;
+            player1.keyCode = null;
+            player2.keyPress = false;
+            player2.keyCode = null;
+            jugador1.style.top = (height-160)/2+"px";
+            jugador2.style.top = (height-160)/2+"px";
+            bola.style.top = (height-64)/2+"px";
+            bola.style.left = (width-64)/2+"px";
+        }
     }
 
     function stop(){
         clearInterval(control);
-        document.body.style.background = "#f00";
     }
 
     function play(){
@@ -94,6 +102,14 @@ var game = function(){
                 }
             }
         }
+        if(bola.offsetLeft<=0){
+            scoreP1++;
+            init();
+        }
+        if(bola.offsetLeft>=width){
+            scoreP2++;
+            init();
+        }
     }
 
 
@@ -101,9 +117,9 @@ var game = function(){
         let choca = false;
         if((bola.offsetLeft >= width-jugador2.clientWidth) && (bola.offsetTop >= jugador2.offsetTop)
          && (bola.offsetTop <= (jugador2.offsetTop + jugador2.clientHeight))   ){
-            return true;
+            choca = true;
         }
-        return false;
+        return choca;
     }
 
     function ChocaJ1B(){
