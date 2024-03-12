@@ -1,0 +1,34 @@
+#tablero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(10, 10, 10);
+    padding: 20px 60px;
+    border-radius: 20px;
+}
+#rejilla{
+    display: grid; 
+    grid-template-columns: repeat(7, 6vw);
+    grid-template-rows:repeat(6, 5vw);
+    gap: 10px;
+}
+#rejilla div{
+    display: flex;
+    background-color: rgba(72, 26, 124, 0.822);
+    border: solid 3px black;
+    border-radius: 50%;
+}
+#arriba{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 42vw;
+    margin-bottom: 10px;
+}
+#abajo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 42vw;
+    margin-top: 10px;
+}
