@@ -4,8 +4,12 @@ var game = function(){
     let move = 5;
     let moveJ = 5;
     let pelota = bola.clientWidth;
-    let width = juego.clientWidth - move*10;
-    let height = juego.clientHeight - pelota;
+    let minwidth = (container.clientWidth - juego.clientWidth)/2;
+    let minheight = (container.clientHeight - juego.clientHeight)/2;
+    let width =  (container.clientWidth/2);
+    let height = header.clientHeight + (main.clientHeight/2);
+    let maxwidth = container.clientWidth - minwidth;
+    let maxheight = minheight + juego.clientHeight;
     let control;
     let player1;
     let player2;
@@ -31,17 +35,17 @@ var game = function(){
             document.getElementById("p2").innerHTML = scoreP2;
             bola.style.left = 0;
             bola.state = 1;
-            bola.direction = 1; //right 1, left 2
             player1 = new Object();
             player2 = new Object();
             player1.keyPress = false;
             player1.keyCode = null;
             player2.keyPress = false;
             player2.keyCode = null;
-            jugador1.style.top = (height-160)/2+"px";
-            jugador2.style.top = (height-160)/2+"px";
-            bola.style.top = (height-64)/2+"px";
-            bola.style.left = (width-64)/2+"px";
+            jugador1.style.top = height +"px";
+            jugador2.style.top = height +"px";
+            jugador2.style.left = maxwidth - (jugador2.clientWidth*1.2) +"px";
+            bola.style.top = height +"px";
+            bola.style.left = width  +"px";
         }
     }
 
@@ -94,25 +98,25 @@ var game = function(){
         }
 
         if(bola.state == 1){
-            if(bola.offsetTop >= height) bola.state=2;
+            if(bola.offsetTop >= maxheight - pelota) bola.state=2;
         }else{
             if(bola.state == 2){
-                if(bola.offsetTop <= 0) bola.state=1;
+                if(bola.offsetTop <= minheight) bola.state=1;
             }
             else{
                 if(bola.state == 3){
-                    if(bola.offsetTop >= height) bola.state=4;
+                    if(bola.offsetTop >= maxheight - pelota) bola.state=4;
                 }
                 else{
-                    if(bola.offsetTop <= 0) bola.state=3;
+                    if(bola.offsetTop <= minheight) bola.state=3;
                 }
             }
         }
-        if(bola.offsetLeft<=0){
+        if(bola.offsetLeft<=minwidth){
             scoreP2++;
             init();
         }
-        if(bola.offsetLeft>=width){
+        if(bola.offsetLeft>=maxwidth){
             scoreP1++;
             init();
         }
@@ -121,7 +125,7 @@ var game = function(){
 
     function ChocaJ2B(){
         let choca = false;
-        if((bola.offsetLeft >= width-jugador2.clientWidth) && (bola.offsetTop >= jugador2.offsetTop)
+        if((bola.offsetLeft >= maxwidth-jugador2.clientWidth) && (bola.offsetTop >= jugador2.offsetTop)
          && (bola.offsetTop <= (jugador2.offsetTop + jugador2.clientHeight))   ){
             choca = true;
         }
@@ -130,7 +134,7 @@ var game = function(){
 
     function ChocaJ1B(){
         let choca = false;
-        if((bola.offsetLeft <= jugador1.clientWidth) && (bola.offsetTop >= jugador1.offsetTop)
+        if((bola.offsetLeft <= minwidth-jugador1.clientWidth) && (bola.offsetTop >= jugador1.offsetTop)
          && (bola.offsetTop <= (jugador1.offsetTop + jugador1.clientHeight))   ){
             choca = true;
         }
@@ -140,24 +144,24 @@ var game = function(){
     function moverJ(){
         if (player1.keyPress){
             if (player1.keyCode == 87){
-                if(parseInt(jugador1.style.top)>moveJ){
+                if(parseInt(jugador1.style.top)-moveJ*2>minheight){
                     jugador1.style.top = (jugador1.offsetTop - moveJ) + "px";
                 }
             }
             if (player1.keyCode == 83){
-                if(parseInt(jugador1.style.top)+moveJ<(height-160)){
+                if(parseInt(jugador1.style.top)+parseInt(jugador1.clientHeight)+moveJ*3<(maxheight)){
                     jugador1.style.top = (jugador1.offsetTop + moveJ) + "px";               
                 }
             }
         }
         if (player2.keyPress){
             if (player2.keyCode == 38){
-                if(parseInt(jugador2.style.top)>moveJ){
+                if(parseInt(jugador2.style.top)-moveJ*2>minheight){
                     jugador2.style.top = (jugador2.offsetTop - moveJ) + "px";
                 }
             }
             if (player2.keyCode == 40){
-                if(parseInt(jugador2.style.top)+moveJ<(height-160)){
+                if(parseInt(jugador2.style.top)+parseInt(jugador2.clientHeight)+moveJ*3<(maxheight)){
                     jugador2.style.top = (jugador2.offsetTop + moveJ) + "px";
                 }
             }
