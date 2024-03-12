@@ -19,7 +19,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../recursos/mente\(memory\).png');
+    background-image: url(../recursos/mente\(memory\).png);
     background-size: cover;
     background-position: center;
     z-index: -1; /* Para asegurarse de que la imagen de fondo esté detrás de otros elementos */

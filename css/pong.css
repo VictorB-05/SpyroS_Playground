@@ -1,16 +1,14 @@
 div#jugador1{
     background-color: blue ;
-    float: left;
 }
 div#jugador2{
     background-color: red ;
-    right: 0px;
 }
 .j{
     width: 2em;
     height: 10em;
     border: 0.2em solid white;
-    position: relative;
+    position: absolute;
 }
 div#bola{
     background-color: green;
@@ -18,7 +16,7 @@ div#bola{
     height: 4em;
     border: 0.2em solid white;
     border-radius: 10em;
-    position: relative;
+    position: absolute;
 }
 
 body{
@@ -30,7 +28,7 @@ div#barra{
     width:49%;
     border-right: #fff dashed 1%;
     height: 100%;
-    position: relative;
+    position: absolute;
 }
 *{
     margin: 0;
@@ -41,8 +39,9 @@ div#barra{
     color: #fff;
 }
 #juego{
-    width: 10em;
-    height: 20em;
+    width: 100%;
+    height: 60vh;
+    background-color: rgba(255, 0, 0, 0.251);
 }
 main{
     height: 100%; 
