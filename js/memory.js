@@ -1,6 +1,27 @@
-const cartas = ['fa-dog', 'fa-dog', 'fa-cat', 'fa-cat', 'fa-car', 'fa-car', 'fa-bicycle', 'fa-bicycle', 'fa-tree', 'fa-tree', 'fa-umbrella', 'fa-umbrella', 'fa-coffee', 'fa-coffee', 'fa-leaf', 'fa-leaf'];
+const cartas = [
+    'fa-dog', 'fa-dog',
+    'fa-cat', 'fa-cat',
+    'fa-car', 'fa-car',
+    'fa-bicycle', 'fa-bicycle',
+    'fa-tree', 'fa-tree',
+    'fa-umbrella', 'fa-umbrella',
+    'fa-coffee', 'fa-coffee',
+    'fa-leaf', 'fa-leaf',
+    'fa-camera', 'fa-camera',
+    'fa-birthday-cake', 'fa-birthday-cake',
+    'fa-heart', 'fa-heart',
+    'fa-star', 'fa-star',
+    'fa-plane', 'fa-plane',
+    'fa-rocket', 'fa-rocket',
+    'fa-anchor', 'fa-anchor',
+    'fa-bolt', 'fa-bolt'
+];
+
 let cartaVolteada = null;
 let puedeVoltear = false;
+let intentosFallidos = 0; // Variable para llevar el registro de los intentos fallidos
+const maxIntentosFallidos = 8; // Número máximo de intentos fallidos permitidos
+let juegoTerminado = false; // Bandera para controlar si el juego ha terminado
 
 function mezclar(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -35,7 +56,7 @@ function crearTablero() {
 }
 
 function voltearCarta() {
-    if (!puedeVoltear || this === cartaVolteada || this.classList.contains('flip')) return;
+    if (!puedeVoltear || this === cartaVolteada || this.classList.contains('flip') || juegoTerminado) return;
 
     this.classList.add('flip');
 
@@ -49,6 +70,11 @@ function voltearCarta() {
                 this.classList.remove('flip');
                 cartaVolteada = null;
                 puedeVoltear = true;
+                intentosFallidos++; // Aumentar el contador de intentos fallidos
+                if (intentosFallidos === maxIntentosFallidos) {
+                    alert('Game Over');
+                    juegoTerminado = true; // Establecer la bandera de juego terminado
+                }
             }, 1000);
         } else {
             cartaVolteada = null;
@@ -59,6 +85,8 @@ function voltearCarta() {
 function reiniciarJuego() {
     const tablero = document.getElementById('memory-game');
     tablero.innerHTML = ''; // Limpiar el tablero
+    intentosFallidos = 0; // Reiniciar el contador de intentos fallidos
+    juegoTerminado = false; // Reiniciar la bandera de juego terminado
     crearTablero(); // Volver a crear el tablero
 }
 

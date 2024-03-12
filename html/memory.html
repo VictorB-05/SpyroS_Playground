@@ -9,9 +9,15 @@
 </head>
 <body>
     <div id="background-image"></div>
-    <button id="start-game">Iniciar Juego</button>
-    <button id="restart-game">Reiniciar Juego</button>
-    <div id="memory-game"></div>
+    <div id="game-container">
+        <h2 class="welcome-text">Bienvenido al juego de Memory</h2>
+        <div id="memory-game"></div>
+        <div id="extra-memory-game"></div> <!-- Nuevo contenedor para celdas adicionales -->
+        <div id="button-container">
+            <button id="start-game">Iniciar Juego</button>
+            <button id="restart-game">Reiniciar Juego</button>
+        </div>
+    </div>
 
     <script src="../js/memory.js"></script>
 </body>
