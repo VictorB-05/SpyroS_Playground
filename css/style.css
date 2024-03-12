@@ -2,7 +2,7 @@
 *{
     margin: 0;
     padding: 0;
-     box-sizing: border-box;  /*Evita que el borde cambie el tamaño del elemento */
+    box-sizing: border-box;  /*Evita que el borde cambie el tamaño del elemento */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 body{
@@ -24,6 +24,7 @@ header{
         "logo titulo espacio";
     background: linear-gradient(180deg, rgba(11,1,57,1) 0%, rgba(53,4,87,0.5) 100%);
     border-bottom:10px  solid rgb(106, 44, 151);
+    min-height: 20vh;
 }
 
 header img{
@@ -55,6 +56,7 @@ main{
     color:white;
     margin-top:auto;
     padding: 20px;
+    min-height: 50vh;
 }
 
 #juegoRandom{
