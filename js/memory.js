@@ -20,7 +20,7 @@ const cartas = [
 let cartaVolteada = null;
 let puedeVoltear = false;
 let intentosFallidos = 0; // Variable para llevar el registro de los intentos fallidos
-const maxIntentosFallidos = 8; // Número máximo de intentos fallidos permitidos
+const maxIntentosFallidos = 16; // Número máximo de intentos fallidos permitidos
 let juegoTerminado = false; // Bandera para controlar si el juego ha terminado
 
 function mezclar(array) {
