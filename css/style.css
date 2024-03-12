@@ -56,7 +56,11 @@ main{
     color:white;
     margin-top:auto;
     padding: 20px;
+<<<<<<< Updated upstream
     min-height: 50vh;
+=======
+    min-height: 60vh;
+>>>>>>> Stashed changes
 }
 
 #juegoRandom{
@@ -109,6 +113,7 @@ footer{
     background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(11,1,57,1) 38%, rgba(53,4,87,1) 100%);
     color: white;
     border-top:10px  solid rgb(106, 44, 151);
+    min-height: 20vh;
 }
 
 #descripcion{
