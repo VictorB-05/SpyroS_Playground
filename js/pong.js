@@ -5,7 +5,7 @@ var game = function(){
     let moveJ = 5;
     let pelota = bola.clientWidth;
     let minwidth = (container.clientWidth - juego.clientWidth)/2;
-    let minheight = (container.clientHeight - juego.clientHeight)/2;
+    let minheight = (container.clientHeight-40 - juego.clientHeight)/2;
     let width =  (container.clientWidth/2);
     let height = header.clientHeight + (main.clientHeight/2);
     let maxwidth = container.clientWidth - minwidth;
@@ -15,7 +15,7 @@ var game = function(){
     let player2;
     let scoreP1=0;
     let scoreP2=0;
-
+    console.log(maxwidth,minwidth)
     function start(){
         init();
         control = setInterval(play,time);
@@ -116,7 +116,7 @@ var game = function(){
             scoreP2++;
             init();
         }
-        if(bola.offsetLeft>=maxwidth){
+        if(bola.offsetLeft+pelota>=maxwidth){
             scoreP1++;
             init();
         }
@@ -125,7 +125,7 @@ var game = function(){
 
     function ChocaJ2B(){
         let choca = false;
-        if((bola.offsetLeft >= maxwidth-jugador2.clientWidth) && (bola.offsetTop >= jugador2.offsetTop)
+        if((bola.offsetLeft >= maxwidth-jugador2.clientWidth-pelota) && (bola.offsetTop >= jugador2.offsetTop)
          && (bola.offsetTop <= (jugador2.offsetTop + jugador2.clientHeight))   ){
             choca = true;
         }
@@ -134,7 +134,7 @@ var game = function(){
 
     function ChocaJ1B(){
         let choca = false;
-        if((bola.offsetLeft <= minwidth-jugador1.clientWidth) && (bola.offsetTop >= jugador1.offsetTop)
+        if((bola.offsetLeft <= minwidth+jugador1.clientWidth) && (bola.offsetTop >= jugador1.offsetTop)
          && (bola.offsetTop <= (jugador1.offsetTop + jugador1.clientHeight))   ){
             choca = true;
         }
@@ -144,7 +144,7 @@ var game = function(){
     function moverJ(){
         if (player1.keyPress){
             if (player1.keyCode == 87){
-                if(parseInt(jugador1.style.top)-moveJ*2>minheight){
+                if(parseInt(jugador1.style.top)-moveJ*4>minheight){
                     jugador1.style.top = (jugador1.offsetTop - moveJ) + "px";
                 }
             }
@@ -156,7 +156,7 @@ var game = function(){
         }
         if (player2.keyPress){
             if (player2.keyCode == 38){
-                if(parseInt(jugador2.style.top)-moveJ*2>minheight){
+                if(parseInt(jugador2.style.top)-moveJ*4>minheight){
                     jugador2.style.top = (jugador2.offsetTop - moveJ) + "px";
                 }
             }
