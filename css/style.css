@@ -18,28 +18,34 @@ body{
 }
 
 header{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-areas: 
-        "logo titulo espacio";
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     background: linear-gradient(180deg, rgba(11,1,57,1) 0%, rgba(53,4,87,0.5) 100%);
     border-bottom:10px  solid rgb(106, 44, 151);
     min-height: 20vh;
 }
 
-header img{
-    align-self: center;
-    text-align: center;
-    grid-template: "titulo";
-    color: aliceblue;
-    font-size: 3em;
+#titulo{
+    width: 30vw;
 }
 
 #logo{
-    grid-template: "logo";
-    margin: 20px 20%;
-    align-self: start;
     width: 150px;
+}
+
+#reportes{
+    background-color: rgba(48, 37, 54, 0.178);
+    padding: 15px;
+    border-radius: 5em;
+    border:solid 2px rgb(98, 105, 112);
+    color: rgb(98, 105, 112);
+    cursor:pointer;
+    user-select: none;
+}
+#reportes:hover{
+    filter:brightness(1.2);
 }
 #containerJuegos a{
     text-decoration: none;
@@ -56,18 +62,20 @@ main{
     color:white;
     margin-top:auto;
     padding: 20px;
-<<<<<<< Updated upstream
     min-height: 50vh;
-=======
-    min-height: 60vh;
->>>>>>> Stashed changes
 }
 
 #juegoRandom{
     margin:20px;
-    background-color: violet;
-    padding: 20px;
+    background-color: rgb(165, 28, 165);
+    padding: 20px 35px;
     border-radius: 5em;
+    user-select: none;
+    cursor:pointer;
+    transition: filter 0.3s ease;
+}
+#juegoRandom:hover{
+    filter:brightness(1.2);
 }
 
 .juegos{
@@ -77,12 +85,14 @@ main{
     flex:1 1 35vw;
     color:white;
     height: 200px;
-    border:solid 2px violet;
+    border:solid 3px rgb(106, 44, 151);
     border-radius: 5em;
+    user-select: none;
+    cursor:pointer;
 }
 
 .juegos:hover{
-    transition:all 0.5s;
+    transition:all 0.5s ease;
     transform: scale(1.04);
     box-shadow: inset 0px 0px 25px rgb(149, 1, 255);
 }
@@ -98,10 +108,6 @@ main{
 
 #logoFooter{
     height: 150px;
-}
-
-.espacio{
-    grid-template: "espacio";
 }
 
 footer{
@@ -132,5 +138,12 @@ footer{
 }
 
 #desarrolladores{
-    margin: 25px 0 15px 0;
+    margin: 10px 0;
 }
+/* color de los links al github */
+.desarrollador{
+    color:rgb(108, 69, 197);
+}
+.desarrollador:visited {
+    color: rgb(88, 15, 88);
+  }
