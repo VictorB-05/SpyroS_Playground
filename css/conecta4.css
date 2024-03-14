@@ -2,19 +2,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(10, 10, 10);
-    padding: 20px 60px;
+    background: linear-gradient(180deg, rgb(23, 4, 58) 50%, rgb(52, 4, 87) 100%);
+    padding: 25px 60px;
     border-radius: 20px;
+    border:3px  solid rgb(106, 44, 151);
+    margin: 20px 0;
+    transition: all 0.3s ease;
+}
+#tablero:hover{
+    box-shadow:0 0 10px rgb(106, 44, 151);
 }
 #rejilla{
     display: grid; 
-    grid-template-columns: repeat(7, 6vw);
-    grid-template-rows:repeat(6, 5vw);
+    grid-template-columns: repeat(7, 5vw);
+    grid-template-rows:repeat(6, 4vw);
     gap: 10px;
 }
 #rejilla div{
     display: flex;
-    background-color: rgba(72, 26, 124, 0.822);
+    background-color: rgba(45, 32, 59, 0.795);
     border: solid 3px black;
     border-radius: 50%;
 }
@@ -33,5 +39,5 @@
     margin-top: 10px;
 }
 .col0,.col1,.col2,.col3,.col4,.col5,.col6{
-    transition: all 0.3s;
+    transition: all 0.3s ease;
 }
