@@ -6,7 +6,7 @@
     padding: 25px 60px;
     border-radius: 20px;
     border:3px  solid rgb(106, 44, 151);
-    margin: 20px 0;
+    margin: 10px 0;
     transition: all 0.3s ease;
 }
 #tablero:hover{
@@ -16,34 +16,53 @@
     display: grid; 
     grid-template-columns: repeat(7, 5vw);
     grid-template-rows:repeat(6, 4vw);
-    gap: 10px;
+    gap: 0.5vw;
 }
 #rejilla div{
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: rgba(45, 32, 59, 0.562);
-    border: solid 3px black;
+    border: solid 3px rgba(0, 0, 0, 0.849);
     border-radius: 50%;
 }
 #arriba{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 42vw;
+    width: 100%;
     margin-bottom: 10px;
 }
 #abajo{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 42vw;
+    width: 100%;
     margin-top: 10px;
 }
 .col0,.col1,.col2,.col3,.col4,.col5,.col6{
     transition: all 0.3s ease;
 }
-#daltonicos{
-    background-color: black;
-    padding: 20px;
+main{
+    align-self: center;
+    font-size: 1.2em;
+}
+#abajo .botones{
+    padding: 10px 20px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border:solid 3px rgb(106, 44, 151);
+    border-radius: 5em;
+    user-select: none;
+    cursor:pointer;
+}
+.botones{
+    padding: 10px;  
+}
+#ganador{
+    border-radius: 5em;
+    font-weight: bold; 
+    padding: 10px 3vw;
+    transition: all 1s ease;
 }

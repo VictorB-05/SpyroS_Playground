@@ -5,5 +5,5 @@ const boton=document.getElementById("juegoRandom");
 
 boton.addEventListener('click', ()=>{
     let aleatorio=Math.floor(Math.random()*4);
-    window.open(juegos[aleatorio]);
+    window.location.href=juegos[aleatorio];
 });
