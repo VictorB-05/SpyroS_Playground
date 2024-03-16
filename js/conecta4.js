@@ -19,6 +19,7 @@ const idGanador=document.querySelector('#ganador');
 const color1="rgb(162, 6, 235)";
 const color2="rgb(6, 182, 235)";
 const estiloPorDefecto=document.querySelector('#i0j0').style;
+const estiloBotonDaltonicos=daltonicos.style;
 let jugadorActual=color1;
 //boolean
 let Bdaltonicos=false;
@@ -30,6 +31,7 @@ let timeout;
 //declaracion e inicializacion de arrays
 let tablero=[];
 let idArray=[];
+let empate=0;
 
 for (let i = 0; i < 6; i++) {
     tablero[i]=[];                
@@ -41,9 +43,7 @@ for (let i = 0; i < 6; i++) {
 }
 /*
     A implementar:
-        -Empate
-        -revisar apartado grafico
-        -cambiar de ficha entre partidas
+        -Refactorizar
         -Instrucciones??
     
 */
@@ -60,14 +60,21 @@ function colocarFicha(columna) {
             //obtenemos la columna j del tablero a través del ultimo numero del nombre de su clase, ejemplo: ".col4".slice(-1)==="4"
             //luego asigno a la posicion indicada un número, a través de esto, haré las comprobaciones.
             tablero[i][parseInt(columna[0].classList.value.slice(-1))] = (jugadorActual === color1)?1:2;
+            empate++;
             modoDaltonicos();
-            if(comprobarGanador(tablero)){
+            if(comprobarGanador(tablero)==="empate"){
+                idGanador.innerHTML=`EMPATE`;
+                timeout=setTimeout(()=>{
+                    reiniciarPartida();
+                },5000);
+            }
+            else if(comprobarGanador(tablero)){
                 puntuar(jugadorActual);
                 timeout=setTimeout(()=>{
                     reiniciarPartida();
                 },5000);
                 return;
-            }  
+            }
             siguienteTurno();//Alternamos entre colores   
             return;
         }
@@ -123,6 +130,8 @@ function destacarColumna(columna,color){
 
 function reiniciarPartida(){
     clearTimeout(timeout);
+    siguienteTurno();
+    empate=0;
     for (let i = 0; i < 6; i++) {
         for (let j = 0; j < 7; j++) {
             tablero[i][j] = null; //inicia un array bidimensional tablero lleno de "null"
@@ -132,7 +141,6 @@ function reiniciarPartida(){
             idGanador.style.boxShadow="none";
         }
     }
-    jugadorActual=color1;
     modoDaltonicos();
 }
 //esta funcion activa o desactiva el modo daltonicos dependiendo de la variable booleana  "Bdaltonicos".
@@ -150,9 +158,12 @@ function modoDaltonicos(){
                     idArray[i][j].innerHTML='<svg fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="-196.38 -196.38 1374.66 1374.66" xml:space="preserve" stroke="#000000" transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="7.855200000000001"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M861,863.05c0-30.4-24.6-55-55-55H175.9c-30.4,0-55,24.6-55,55s24.6,55,55,55H806C836.4,918.05,861,893.35,861,863.05z"></path> <path d="M65.4,417.85c0.9,0,1.7,0,2.6-0.1l87.2,315.6H491h335.7l87.2-315.6c0.899,0,1.699,0.1,2.6,0.1c36.1,0,65.4-29.3,65.4-65.4 s-29.301-65.4-65.4-65.4s-65.4,29.3-65.4,65.4c0,7,1.101,13.8,3.2,20.1l-157.7,92.2l-169.5-281 c17.601-11.7,29.301-31.8,29.301-54.5c0-36.1-29.301-65.4-65.4-65.4s-65.4,29.3-65.4,65.4c0,22.8,11.601,42.8,29.301,54.5 l-169.5,281l-157.7-92.2c2-6.3,3.2-13.1,3.2-20.1c0-36.1-29.3-65.4-65.4-65.4c-36.2,0-65.5,29.3-65.5,65.4S29.3,417.85,65.4,417.85 z"></path> </g> </g></svg>';  
                 }                  
                 turno.innerHTML=`Turno: ${jugadorActual==color1?"Dragones":"Coronas"}`;
+                daltonicos.style.boxShadow="0 0 10px rgb(106, 44, 151)";
+                daltonicos.style.transform="scale(1.1)";
             }else{
                 idArray[i][j].innerHTML=""; 
                 turno.innerHTML=`Turno: ${jugadorActual==color1?"Moradas":"Azules"}`;
+                daltonicos.style=estiloBotonDaltonicos;
             }
         }
     }
@@ -200,9 +211,11 @@ idReiniciarScore.addEventListener('click',()=>{
 
 //comprobaciones
 
-// Código proporcionado por ChatGPT:
 
 function comprobarGanador(tablero) {
+    if(empate===42){
+        return "empate";
+    }
     // Comprobar filas
     for (let i = 0; i < 6; i++) {
         for (let j = 0; j < 4; j++) {

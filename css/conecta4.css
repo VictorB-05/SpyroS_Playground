@@ -57,8 +57,12 @@ main{
     user-select: none;
     cursor:pointer;
 }
+#abajo .botones:hover{
+ transform: scale(1.1);
+}
 .botones{
-    padding: 10px;  
+    padding: 10px;
+    transition: all 1s ease;
 }
 #ganador{
     border-radius: 5em;
