@@ -25,6 +25,7 @@
     background-color: rgba(45, 32, 59, 0.562);
     border: solid 3px rgba(0, 0, 0, 0.849);
     border-radius: 50%;
+    cursor:pointer;
 }
 #arriba{
     display: flex;
@@ -62,6 +63,7 @@ main{
 }
 .botones{
     padding: 10px;
+    user-select: none;
     transition: all 1s ease;
 }
 #ganador{
