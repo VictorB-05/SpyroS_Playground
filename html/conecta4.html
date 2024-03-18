@@ -11,17 +11,21 @@
 <body>
     <div  id="container">
         <header>
-            <img id="logo" src="../recursos/Logorec.gif" alt="El logo de Spyro's Playground">
+            <a href="home.html">
+                <img id="logo" src="../recursos/Logorec.gif" alt="El logo de Spyro's Playground">
+            </a>            
             <img id="titulo" src="../recursos/titulo.png" alt="Spyro's Playground">
             <div id="reportes"><p>Informar de un error</p></div>
         </header>
         <main>
             <div id="arriba">
-                <p>Score: 2-0</p>
-                <p>Turno: Moradas</p>
+                <div id="score" class="botones"><p>Score: 0-0</p></div>
+                <div id="ganador" class="botones"><p> &nbsp;</p></div>
+                <div id="turno" class="botones"><p>Turno: Moradas</p></div>
             </div>
             <div id="tablero">
                 <div id="rejilla">
+                    <div id="i0j0" class="col0"></div>
                     <div id="i0j1" class="col1"></div>
                     <div id="i0j2" class="col2"></div>
                     <div id="i0j3" class="col3"></div>
@@ -63,13 +67,12 @@
                     <div id="i5j4" class="col4"></div>
                     <div id="i5j5" class="col5"></div>
                     <div id="i5j6" class="col6"></div>
-                    <div id="i0j0" class="col0"></div>
                 </div>
             </div>
             <div id="abajo">
-                <p>Reiniciar Score</p>
-                <p>Modo Daltonicos</p>
-                <p>Reiniciar Partida</p>
+                <div id="reiniciarScore" class="botones"><p>Reiniciar Score</p></div>
+                <div id="daltonicos" class="botones"><p>Modo Daltonicos</p></div>
+                <div  id="reiniciarPartida" class="botones"><p>Reiniciar Partida</p></div>
             </div>
         </main>
         <footer>
@@ -88,8 +91,8 @@
                 <p><a href="https://github.com/VictorB-05">VictorB-05</a></p>
                 <p><a href="https://github.com/AntonioGG92">AntonioGG92</a></p>
             </div>
-        </footer>
-        <script src="../js/conecta4.js"></script>
+        </footer>      
     </div>
+    <script src="../js/conecta4.js"></script>
 </body>
 </html>
