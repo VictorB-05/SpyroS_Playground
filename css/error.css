@@ -2,4 +2,17 @@
     background-color: blueviolet;
     border-radius: 1em;
     padding: 1em;
+    text-align: center; 
+}
+#reporte{
+    background-color: rgba(137, 27, 196, 0.878);
+    padding: 15px;
+    border-radius: 5em;
+    border:solid 2px rgb(225, 149, 255);
+    color: rgb(193, 206, 236);
+    cursor:pointer;
+    user-select: none;
+}
+#reporte:hover{
+    filter:brightness(1.2);
 }

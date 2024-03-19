@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spyro's Pareja</title>
+    <title>Spyro's informes</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/error.css">
 
@@ -11,8 +11,9 @@
 <body>
     <div  id="container">
         <header>
-            <img id="logo" src="../recursos/Logorec.gif" alt="El logo de Spyro's Playground">
-            <h1 >Spyro's Playground</h1>
+            <a href="home.html">
+                <img id="logo" src="../recursos/Logorec.gif" alt="El logo de Spyro's Playground">
+            </a>                        <img id="titulo" src="../recursos/titulo.png" alt="Spyro's Playground">
             <div class="espacio"></div>
         </header>
             <main>
@@ -30,7 +31,7 @@
                         <label for="mensaje">Mensaje de error:</label><br>
                         <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br><br>
         
-                        <input type="submit" value="Enviar">
+                        <input id="reporte" type="submit" value="Enviar" >
                     </form>
                 </div>
                 
@@ -53,5 +54,11 @@
             </div>
         </footer>
     </div>
+    <script>
+        document.getElementById("reporte").addEventListener("click", function(event) {
+            alert("¡Correctamente enviado!");
+            window.location.href = "home.html"; // Redirige a la página principal
+        });
+    </script>
 </body>
 </html>
