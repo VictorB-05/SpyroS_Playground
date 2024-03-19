@@ -12,6 +12,7 @@ body{
     /* Esta linea fija una altura mínima para la página. 
        Ha sido implementada para posicionar el footer siempre a pie de página. */
     min-height: 100vh;
+    min-width: 100vw;
     display: flex;
     flex-direction: column;
     background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(11,1,57,1) 38%, rgba(53,4,87,1) 100%);
