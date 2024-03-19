@@ -41,27 +41,37 @@ for (let i = 0; i < 6; i++) {
         idArray[i][j]=document.querySelector(`#i${i}j${j}`); //almacenamos el array de id (lo que se va a ver en la pagina)
     }
 }
-/*
-    A implementar:
-        -Refactorizar
-        -Instrucciones??
-    
-*/
+
 //Funciones
 
 // Esta funcion es llamada desde un listener(click)
+
 function colocarFicha(columna) {
+
     //se recorre la columna donde se quiere colocar la ficha de forma inversa
+
     for (let i=5;i>=0;i--) {
         //comprueba si actualmente hay una ficha, si no la hay, será colocada
+
         if (columna[i].style.backgroundColor !== color2 && columna[i].style.backgroundColor !== color1) {
+
             //fijamos el background del elemento con el color que tenga el jugador actual
+
             columna[i].style.backgroundColor = jugadorActual;
+
             //obtenemos la columna j del tablero a través del ultimo numero del nombre de su clase, ejemplo: ".col4".slice(-1)==="4"
             //luego asigno a la posicion indicada un número, a través de esto, haré las comprobaciones.
+
             tablero[i][parseInt(columna[0].classList.value.slice(-1))] = (jugadorActual === color1)?1:2;
+
             empate++;
+
+            //activa o desactiva modo daltonicos
+
             modoDaltonicos();
+
+            //comprueba los ganadores con cada insercion
+
             if(comprobarGanador(tablero)==="empate"){
                 idGanador.innerHTML=`EMPATE`;
                 timeout=setTimeout(()=>{
@@ -75,7 +85,7 @@ function colocarFicha(columna) {
                 },5000);
                 return;
             }
-            siguienteTurno();//Alternamos entre colores   
+            siguienteTurno();//Alternamos entre jugadores   
             return;
         }
     }
@@ -92,12 +102,16 @@ function siguienteTurno() {
 }
 
 function puntuar(jugador){
+
+    //suma puntos para el score
+
     jugador === color1?j1++:j2++;
     if(Bdaltonicos){
         idGanador.innerHTML=`Ganan ${jugadorActual==color1?"Dragones":"Coronas"}`;
     }else{
         idGanador.innerHTML=`Ganan ${jugadorActual==color1?"Moradas":"Azules"}`;
     }
+    //muestra el ganador por pantalla
     idGanador.style.boxShadow=`inset ${jugadorActual} 0px 0px 10px, ${jugadorActual} 0px 0px 10px`; 
     idGanador.style.color=jugadorActual;
     score.innerHTML=`Score: ${j1}-${j2}`
@@ -111,6 +125,11 @@ function reiniciarScore(){
 //Funcion de destacar Columna, recoge un array y un color
 
 function destacarColumna(columna,color){
+
+    //si el color es "none" actua de forma distinta
+
+    //si no, recoge el color y establece un box shadow del mismo
+
     if(color==="none"){
         columna.forEach(col => {
             console.log(col.style.boxShadow);
@@ -129,7 +148,11 @@ function destacarColumna(columna,color){
 }
 
 function reiniciarPartida(){
+
+    //evita que se reinicie de forma inesperada
+
     clearTimeout(timeout);
+
     siguienteTurno();
     empate=0;
     for (let i = 0; i < 6; i++) {
@@ -144,7 +167,7 @@ function reiniciarPartida(){
     }
     modoDaltonicos();
 }
-//esta funcion activa o desactiva el modo daltonicos dependiendo de la variable booleana  "Bdaltonicos".
+//esta funcion activa o elimina el modo daltonicos dependiendo de la variable booleana  "Bdaltonicos".
 //se me ocurre un enfoque más eficiente, podría agregar la propiedad "visibility:hidden" y alterarla con js,
 //de esta forma no sería necesario la utilizacion del bucle, pero la implementada es la primera forma que se me vino a la cabeza...
 function modoDaltonicos(){
@@ -211,7 +234,6 @@ idReiniciarScore.addEventListener('click',()=>{
 });
 
 //comprobaciones
-
 
 function comprobarGanador(tablero) {
     if(empate===42){

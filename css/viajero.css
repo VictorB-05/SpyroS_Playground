@@ -27,14 +27,15 @@
     grid-template-rows:repeat(7, 10vh);
     width: 50vw;
     box-shadow:0 0 10px rgb(106, 44, 151);
-    border: solid 3px rgb(188, 100, 247);
+    border: solid 3px rgb(106, 44, 151);
     transition: all 0.5s;
     color:rgba(255, 255, 255, 0.466);
 }
 #tablero div{
     display: flex;
-    background-color: rgba(43, 27, 56, 0.678);
-    border: solid 2px rgb(188, 100, 247);
+    background-color: rgba(12, 12, 12, 0.726);
+    border: solid 2px rgb(106, 44, 151);
+    
 }
 #container2{
     display: flex;
@@ -110,17 +111,28 @@
 
 #a31{
     background: url(../recursos/viajero/portalA.png);
-    background-size: 100% 100%;
+    background-size: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
     color:white;  
 }
 
 #a13{
     background: url(../recursos/viajero/portalN.png);
-    background-size: 100% 100%; 
+    background-size: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
     color:white; 
 }
 #a42{
     background: url(../recursos/viajero/planeta.gif);
     background-size: 100% 100%;
+    color:white; 
+}
+#a26{
+    background: url(../recursos/viajero/alien.png);
+    background-size: 50% 90%;
+    background-position: center;
+    background-repeat: no-repeat;
     color:white; 
 }
