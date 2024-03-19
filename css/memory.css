@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -6,15 +6,21 @@ body {
     flex-direction: column;
     height: 100vh;
     margin: 0;
+} */
+body{
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(11,1,57,1) 38%, rgba(53,4,87,1) 100%);
+    min-height: 100vh;
 }
-
+header{
+    background: linear-gradient(180deg, rgba(11,1,57,1) 0%, rgb(52, 4, 87) 100%) !important; 
+}
 h2 {
     margin-bottom: 20px;
 }
 
 .welcome-text {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Cambiar la fuente */
-    color: #ffffff; /* Cambiar el color del texto */
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; Cambiar la fuente */
+    color: rgb(167, 97, 218); /* Cambiar el color del texto */
     margin-right: 10px; /* Espacio entre el texto y los botones */
 }
 
@@ -25,15 +31,16 @@ h2 {
 }
 
 #memory-game {
-    width: 720px; /* Ancho total del contenedor de las celdas */
+    width: 40vw; /* Ancho total del contenedor de las celdas */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
 }
-
-#background-image {
+#imagenMente{
+    width: 20vw;
+}
+/* #background-image {
     position: fixed;
     top: 0;
     left: 0;
@@ -43,7 +50,7 @@ h2 {
     background-size: cover;
     background-position: center;
     z-index: -1;
-}
+} */
 
 .memory-card {
     width: 90px; /* Ajustar el tamaño de las celdas */
@@ -85,6 +92,8 @@ h2 {
 
 #button-container {
     display: flex;
+    width: 70%;
+    justify-content: space-around;
 }
 
 #start-game, #restart-game {

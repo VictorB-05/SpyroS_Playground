@@ -6,19 +6,45 @@
     <title>Juego Memory</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../css/memory.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <div id="background-image"></div>
-    <div id="game-container">
-        <h2 class="welcome-text">Bienvenido al juego de Memory</h2>
-        <div id="memory-game"></div>
-        <div id="extra-memory-game"></div> <!-- Nuevo contenedor para celdas adicionales -->
-        <div id="button-container">
-            <button id="start-game">Iniciar Juego</button>
-            <button id="restart-game">Reiniciar Juego</button>
+    <header>
+        <img id="logo" src="../recursos/Logorec.gif" alt="El logo de Spyro's Playground">
+        <img id="titulo" src="../recursos/titulo.png" alt="Titulo: Spyro's Playground">
+        <div id="reportes"><p>Informar de un error</p></div>
+    </header>
+    <main>
+        <div id="game-container">
+            <h2 class="welcome-text">Bienvenido al juego de Memory</h2>
+            <div id="memory-game"></div>
+            <img id="imagenMente" src="../IMG/mente6.png" alt="Mente.png">
+            <div id="extra-memory-game"></div> <!-- Nuevo contenedor para celdas adicionales -->
+            <div id="button-container">
+                <button id="start-game">Iniciar Juego</button>
+                <button id="restart-game">Reiniciar Juego</button>
+            </div>
         </div>
-    </div>
-
+    </main>
+    <footer>
+        <img id="logoFooter" src="../recursos/Logorec.gif" alt="El logo de Spyro's Playground">
+        <p id="descripcion">Spyro's Playground es una página web de juegos en línea que ofrece una amplia variedad de juegos y actividades.La plataforma garantiza diversión para todos los gustos. La interfaz es fácil de usar y accesible desde cualquier dispositivo. <br><br> En resumen, Spyro's Playground ofrece un mundo de juegos emocionantes y aventuras inolvidables para disfrutar en línea.</p>
+        <div id="navFooter">
+            <p>Idiomas: </p>
+            <div>
+                <img class="banderas" src="../recursos/flag_es.png" alt="Bandera españa">
+                <img class="banderas" src="../recursos/flag_en.png" alt="English flag">
+                <img class="banderas" src="../recursos/flag_br.png" alt="Bandeira brasileira">
+            </div>
+            <p id="desarrolladores">Desarrolladores:</p>
+            <!-- Aquí vamos nosotros :D -->
+            <p><a href="https://github.com/RodrigoMoreno2001" class="desarrollador">RodrigoMoreno2001</a></p>                
+            <p><a href="https://github.com/VictorB-05" class="desarrollador">VictorB-05</a></p>
+            <p><a href="https://github.com/AntonioGG92" class="desarrollador">AntonioGG92</a></p>
+        </div>
+    </footer>
+        </div>
+    <script src="../js/script.js"></script>
     <script src="../js/memory.js"></script>
 </body>
 </html>
