@@ -1,6 +1,6 @@
 console.log(window.location.href);
 if(window.location.href.includes("home.html")){
-    let juegos=["conecta4.html","pong.html","memory.html","oca.html"]
+    let juegos=["conecta4.html","pong.html","memory.html","viajero.html"]
 
     const boton=document.getElementById("juegoRandom");
     
