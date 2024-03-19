@@ -1,6 +1,6 @@
 //variables
 const tirar=document.getElementById("tirar");
-const limpiar=document.getElementById("limpiar");
+const reiniciar=document.getElementById("reiniciar");
 const consola=document.getElementById("textoConsola");
 //JUGADOR1
 let jugador1=1;
@@ -28,9 +28,28 @@ let newCoord2;
 let newCoord3;
 
 //listener
-    //se encarga del boton de limpiar, limpia la consola.
-limpiar.addEventListener('click', function() {
+    //reinicia el juego
+reiniciar.addEventListener('click', function() {
+    //borra la consola
     consola.innerHTML = "";
+    
+    //reinicia un jugador
+
+    posicionJugadorActual.innerHTML=posicionJugadorActual.innerHTML.replace(fichaActual," ");
+    casillaJugadorActual=1;
+    posicionJugadorActual=document.getElementById("a"+casillaJugadorActual);
+    posicionJugadorActual.innerHTML+=fichaActual;
+
+    cambiarJugador();
+
+    //reinicia el otro jugador
+    
+    posicionJugadorActual.innerHTML=posicionJugadorActual.innerHTML.replace(fichaActual," ");
+    casillaJugadorActual=1;
+    posicionJugadorActual=document.getElementById("a"+casillaJugadorActual);
+    posicionJugadorActual.innerHTML+=fichaActual;
+
+    cambiarJugador();
 });
     //se encarga de tirar los dados y controla el scroll de la consola con cada input.
 tirar.addEventListener('click', function() {
@@ -85,10 +104,10 @@ function cambiarJugador(){
 
 function output(str){
     if(fichaActual===fichaJ1){
-        consola.innerHTML+="Jugador1: "+str+"</br>";
+        consola.innerHTML+="<p style=\" color:rgb(162, 6, 235);\">Jugador1: </p>"+str+"</br>";
         return;
     }
-    consola.innerHTML+="Jugador2: "+str+"</br>";
+    consola.innerHTML+="<p style=\" color:rgb(6, 182, 235);\">Jugador2: </p>"+str+"</br>";
 }
 
 function avance(){

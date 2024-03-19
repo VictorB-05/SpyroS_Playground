@@ -99,19 +99,22 @@ h2 {
 #start-game, #restart-game {
     padding: 15px 25px;
     font-size: 18px;
-    background-color: #570570;
     border: none;
     color: white;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     margin: 4px 2px;
-    cursor: pointer;
     border-radius: 12px;
     transition-duration: 0.4s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border:solid 3px rgb(106, 44, 151);
+    background-color: #00000000;
+    border-radius: 5em;
+    user-select: none;
+    cursor:pointer;
 }
 
 #start-game:hover, #restart-game:hover {
-    background-color: #ccfa00;
+    transform: scale(1.1);
+    
 }

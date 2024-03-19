@@ -3,13 +3,9 @@
     padding: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-/* body{
-    background: url(https://i.pinimg.com/originals/e1/26/1b/e1261bd48bd4516bf553e68f87b76cc6.png);
-    background-repeat: no-repeat;
-    background-size:100vw 100vh;
-    display: flex;
-    justify-content: center;
-} */
+body{
+    overflow-x: hidden;
+}
 #juego{
     height: 80vh;
     width: 85vw;
@@ -33,9 +29,8 @@
 }
 #tablero div{
     display: flex;
-    background-color: rgba(12, 12, 12, 0.726);
+    background-color: rgba(17, 17, 17, 0.637);
     border: solid 2px rgb(106, 44, 151);
-    
 }
 #container2{
     display: flex;
@@ -67,7 +62,7 @@
     transition: all 0.5s;
 }
 #textoConsola{
-    height: 45vh;
+    height: 40vh;
     overflow-y: scroll;
     user-select: none;
 }
@@ -82,25 +77,31 @@
     font-size: 2em; 
      
 }
-#tirar{
-    background-color: rgb(0, 255, 76);
-}
-#limpiar{
-    background-color: rgb(255, 145, 0);
-}
 .botones{
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 5em;
+    min-width: auto;
     height: 50%;
-    width: 30%;
-    cursor: pointer;
+    padding: 10px 20px;
+    border:solid 3px rgb(106, 44, 151);
+    background-color: #00000000;
+    border-radius: 5em;
     user-select: none;
+    cursor:pointer;
     transition: all 0.1s;
+    color:rgba(255, 255, 255, 0.466);
 }
+
+.botones:hover{
+    filter:brightness(2);
+    box-shadow: 0 0 5px rgba(106, 44, 151, 0.623);
+}
+
 .botones:active{
-    transform: scale(1.2);
+    transform: scale(1.1);
+    box-shadow: 0 0 5px rgba(106, 44, 151, 0.623);
 }
 
 #a33{
