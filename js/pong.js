@@ -31,6 +31,7 @@ var game = function(){
             }
             stop();
         }else{
+            move = 5;
             document.getElementById("p1").innerHTML = scoreP1;
             document.getElementById("p2").innerHTML = scoreP2;
             bola.style.left = 0;
@@ -128,6 +129,7 @@ var game = function(){
         if((bola.offsetLeft >= maxwidth-jugador2.clientWidth-pelota) && (bola.offsetTop >= jugador2.offsetTop)
          && (bola.offsetTop <= (jugador2.offsetTop + jugador2.clientHeight))   ){
             choca = true;
+            move++;
         }
         return choca;
     }
@@ -136,7 +138,8 @@ var game = function(){
         let choca = false;
         if((bola.offsetLeft <= minwidth+jugador1.clientWidth) && (bola.offsetTop >= jugador1.offsetTop)
          && (bola.offsetTop <= (jugador1.offsetTop + jugador1.clientHeight))   ){
-            choca = true;
+            choca = true;            
+            move++;
         }
         return choca;
     }
