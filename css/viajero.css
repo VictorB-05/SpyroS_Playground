@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    background: url(https://i.pinimg.com/originals/e1/26/1b/e1261bd48bd4516bf553e68f87b76cc6.png);
+    background-repeat: no-repeat;
+    background-size:100vw 100vh;
+    display: flex;
+    justify-content: center;
+}
+#container{
+    height: 100vh;
+    width: 85vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#tablero{
+    display: grid; 
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows:repeat(7, 10vh);
+    width: 50vw;
+    box-shadow: 0px 0px 150px rgb(139, 222, 247);
+    border: solid 3px black;
+    transition: all 0.5s;
+}
+#tablero div{
+    display: flex;
+    background-color: rgba(240, 248, 255, 0.822);
+    border: solid 3px black;
+}
+#container2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cohete{
+    background-color: rgba(0, 0, 0, 0.979);
+    height: 75vh;
+    width: 25vw;
+    border-radius: 25em 25em 0px 0px;
+    transition: all 0.5s;
+}
+#consola{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top:13vh;
+    margin:2em;
+    margin-top: 0;
+    font-size: 1.2em;
+    color: white;
+}
+#consola h1{
+    font-size: 1.4vw;
+    align-self: center;
+    margin-bottom: 50px;
+    transition: all 0.5s;
+}
+#textoConsola{
+    height: 50vh;
+    overflow-y: scroll;
+    user-select: none;
+}
+#pieCohete{
+    background-color: rgba(0, 0, 0, 0.979);
+    height: 10vh;
+    width: 30vw;
+    border-radius: 5em 5em 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 2em; 
+     
+}
+#tirar{
+    background-color: rgb(0, 255, 76);
+}
+#limpiar{
+    background-color: rgb(255, 145, 0);
+}
+.botones{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5em;
+    height: 50%;
+    width: 30%;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.1s;
+}
+.botones:active{
+    transform: scale(1.2);
+}
+
+#a33{
+    background: url(https://imagenes.heraldo.es/uploads/imagenes/2022/11/30/detectan-el-jet-que-emerge-de-un-agujero-negro-supermasivo-al-devorar-una-estrella.gif);
+    background-size: 100% 100%;
+    color:white;
+}
+
+#a31{
+    background: url(../recursos/viajero/portalA.png);
+    background-size: 100% 100%; 
+}
+
+#a13{
+    background: url(../recursos/viajero/portalN.png);
+    background-size: 100% 100%; 
+}
+#a42{
+    background: url(../recursos/viajero/planeta.gif);
+    background-size: 100% 100%;
+    color:white; 
+}
