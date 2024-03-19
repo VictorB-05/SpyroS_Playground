@@ -16,7 +16,6 @@ div#bola{
     width: 4em;
     height: 4em;
     border: 0.2em solid white;
-    border: 0.2em solid rgb(102, 102, 102);
     border-radius: 10em;
     position: absolute;
 }
