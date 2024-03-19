@@ -33,7 +33,6 @@ div#barra{
 *{
     margin: 0;
     box-sizing: border-box;
-    overflow: hidden;
 }
 .punto{
     color: #fff;
