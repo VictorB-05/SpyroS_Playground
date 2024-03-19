@@ -1,4 +1,5 @@
-if(window.location.href=="home.html"){
+console.log(window.location.href);
+if(window.location.href.includes("home.html")){
     let juegos=["conecta4.html","pong.html","memory.html","oca.html"]
 
     const boton=document.getElementById("juegoRandom");
