@@ -1,18 +1,70 @@
 #formulario{
-    background-color: blueviolet;
-    border-radius: 1em;
+    display:flex;
+    min-width: 40vw;
+    min-height: 40vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(221, 221, 221, 0.06);;
     padding: 1em;
     text-align: center; 
+    border:solid 3px rgb(106, 44, 151);
+    border-radius: 2em;
 }
+#formulario>*{
+    margin:5px;
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+form>*{
+    margin:5px;
+}
+
+input{
+    width: 100%;
+    height: 50px;
+    background-color: rgba(48, 37, 54, 0.178);
+    border:none;
+    padding: 10px;
+    border-radius: 2em;
+    margin: 10px;
+}
+#detalles{
+    align-self: start;
+}
+textarea{
+    width: 100%;
+    height: 100px;
+    background-color: rgba(48, 37, 54, 0.178);
+    border:none;
+    padding: 20px;
+    border-radius: 2em; 
+    resize: none;
+}
+
 #reporte{
-    background-color: rgba(137, 27, 196, 0.878);
-    padding: 15px;
-    border-radius: 5em;
-    border:solid 2px rgb(225, 149, 255);
-    color: rgb(193, 206, 236);
+    width: 40%;
+    height: 50px;
+    background-color: rgba(48, 37, 54, 0.178);
+    padding: 15px 40px;
+    border-radius: 2em;
+    border:solid 2px rgb(98, 105, 112);
+    color: rgb(98, 105, 112);
     cursor:pointer;
     user-select: none;
 }
+input:hover,textarea:hover{
+    filter:brightness(1.3);
+    transition: all 0.4s ease;
+}
 #reporte:hover{
     filter:brightness(1.2);
+    transform: scale(1.04);
+    transition: all 0.4s ease;
 }

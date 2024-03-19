@@ -19,17 +19,17 @@
             <main>
                 <div id="formulario">
                     <h2>Formulario de Error</h2>
-                    <p>Por favor, completa el siguiente formulario para reportar un error:</p>
+                    <p>Completa el siguiente formulario para reportar un error:</p>
 
                     <form action="#" method="POST">
-                        <label for="email">Correo electrónico:</label><br>
-                        <input type="email" id="email" name="email" required><br><br>
+
+                        <input type="email" id="email" name="email" placeholder="Correo electrónico:" required>
         
-                        <label for="nombre">Nombre:</label><br>
-                        <input type="text" id="nombre" name="nombre" required><br><br>
+
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre:" required>
         
-                        <label for="mensaje">Mensaje de error:</label><br>
-                        <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea><br><br>
+                        <label for="mensaje" id="detalles">Detalles del reporte:</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" cols="50" placeholder="Detalles del reporte:" required></textarea>
         
                         <input id="reporte" type="submit" value="Enviar" >
                     </form>

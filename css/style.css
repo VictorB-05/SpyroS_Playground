@@ -28,6 +28,11 @@ header{
     min-height: 20vh;
 }
 
+header a{
+    text-decoration: none;
+    color: rgb(98, 105, 112);
+}
+
 #titulo{
     width: 30vw;
 }
