@@ -138,6 +138,7 @@ function reiniciarPartida(){
             idArray[i][j].innerHTML="";
             idArray[i][j].style=estiloPorDefecto; //almacenamos el array de id (lo que se va a ver en la pagina)
             idGanador.innerHTML="";
+            idGanador.style.color="rgb(102, 102, 102)";
             idGanador.style.boxShadow="none";
         }
     }

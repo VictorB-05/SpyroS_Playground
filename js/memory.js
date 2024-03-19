@@ -10,11 +10,11 @@ const cartas = [
     'fa-camera', 'fa-camera',
     'fa-birthday-cake', 'fa-birthday-cake',
     'fa-heart', 'fa-heart',
-    'fa-star', 'fa-star',
-    'fa-plane', 'fa-plane',
-    'fa-rocket', 'fa-rocket',
-    'fa-anchor', 'fa-anchor',
-    'fa-bolt', 'fa-bolt'
+    'fa-star', 'fa-star'
+    //'fa-plane', 'fa-plane'
+    // 'fa-rocket', 'fa-rocket'
+    // 'fa-anchor', 'fa-anchor',
+    // 'fa-bolt', 'fa-bolt'
 ];
 
 let cartaVolteada = null;
@@ -22,7 +22,8 @@ let puedeVoltear = false;
 let intentosFallidos = 0; // Variable para llevar el registro de los intentos fallidos
 const maxIntentosFallidos = 16; // Número máximo de intentos fallidos permitidos
 let juegoTerminado = false; // Bandera para controlar si el juego ha terminado
-
+//
+const imagenMente=document.getElementById("imagenMente");
 function mezclar(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -31,6 +32,7 @@ function mezclar(array) {
 }
 
 function crearTablero() {
+    imagenMente.style.display="none";
     const tablero = document.getElementById('memory-game');
     tablero.innerHTML = ''; // Limpiar el tablero antes de crear nuevas cartas
     mezclar(cartas);
