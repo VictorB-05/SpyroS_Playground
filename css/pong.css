@@ -26,10 +26,10 @@ body{
 }
 
 div#barra{
-    width:49%;
-    border-right: #fff dashed 1%;
+    border-right: #fff dashed 1em;
     height: 100%;
     position: absolute;
+    right: 50%;
 }
 
 .punto{
@@ -42,4 +42,13 @@ div#barra{
 }
 main{
     height: 100%; 
+}
+#puntos{
+    position: relative;
+    display:flex;
+    justify-content: space-around;
+    height: 100%; 
+}
+.punto{
+    font-size:xx-large;
 }
